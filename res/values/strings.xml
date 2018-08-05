@@ -146,6 +146,14 @@
     <string name="headset_connect_player_both_no_carkit">When wired or BT headset (no carkit) is plugged in</string>
     <string name="headset_connect_player_both">When wired or BT headset is plugged in</string>
 
+    <!-- Sms security limit -->
+    <string name="apps_security_options_title">Apps security</string>
+    <string name="sms_outgoing_check_max_count_title">SMS apps message limit</string>
+    <string name="sms_outgoing_check_max_count_dialog">How many messages per minute an app can send before showing an alert</string>
+    <string name="sms_outgoing_check_max_count_default">30 per minute (default)</string>
+    <string name="sms_outgoing_check_max_count_hundred">100 per minute</string>
+    <string name="sms_outgoing_check_max_count_sixhundred">600 per minute</string>
+
     <!-- Headset ringtone audio focus -->
     <string name="ringtone_focus_mode_title">Where to play ringtones from</string>
     <string name="ringtone_focus_mode_dynamic">From headset if connected and playing music</string>
@@ -222,6 +230,11 @@
     <string name="battery_light_medium_color">Medium battery</string>
     <string name="battery_light_full_color">Almost full battery</string>
     <string name="battery_light_reallyfull_color">Full (100) battery</string>
+    <string name="fast_color_cat_title">Fast charging</string>
+    <string name="fast_charging_led_enabled_title">Enable fast charging color</string>
+    <string name="fast_charging_led_enabled_summary">When fast charging, use different color till 90% charged</string>
+    <string name="fast_charging_light_color_title">Color</string>
+    <string name="fast_charging_light_color_summary"></string>
 
     <!-- Statusbar logo -->
     <string name="status_bar_logo_title">Custom Candy logo</string>
@@ -282,6 +295,10 @@
     <string name="lockscreen_date_selection_str_round">Semi-transparent box (round)</string>
     <string name="hide_lockscreen_alarm_title">Alarm text</string>
     <string name="hide_lockscreen_alarm_summary">Change the alarm text\'s visibility underneath the clock widget</string>
+
+    <!-- Hide lockscreen status bar, clock, date, alarm -->
+    <string name="hide_lockscreen_icon_title">Hide lock screen icon</string>
+    <string name="hide_lockscreen_icon_summary">Change the lock screen icon visibility</string>
 
     <!-- Fingerprint authentication vibration -->
     <string name="fprint_sucess_vib_title">Fingerprint authentication vibration</string>
@@ -369,6 +386,7 @@
     <string name="use_slim_recents_summary">Use Slim Recents instead of the default recents view</string>
     <string name="slim_recents_settings_title">Slim recents settings</string>
     <string name="slim_recents_settings_summary">View the settings for Slim Recents</string>
+    <string name="slim_recents_hints_footer">To clear all apps, pinch-in with two fingers on the panel. To block an app from being cleared, long press on its icon to star it.\n\nFor additional recents features such as multiwindow or to kill an app, long press or drag an app card in the panel.</string>
     <string name="recents_max_apps_title">Max allowed apps</string>
     <string name="recent_panel_scale_title">Size</string>
     <string name="recent_panel_expanded_mode_title">Previews expanded mode</string>
@@ -422,6 +440,13 @@
     <string name="icon_pack_picker_dialog_title">Icon packs</string>
     <string name="image_exceeds_max_allowed_size">Image must not exceed 512x512</string>
     <string name="invalid_icon_from_uri">Unable to load image from content provider</string>
+    <string name="picker_activities">Activities</string>
+    <string name="select_custom_app_title">Select custom app</string>
+    <string name="select_custom_activity_title">Select custom activity</string>
+    <string name="profile_applist_title">Applications</string>
+    <string name="default_string">Stock</string>
+    <string name="default_settings">Stock settings</string>
+    <string name="default_settings_summary">Stock AOSP navigation bar</string>
 
     <!-- Gesture Anywhere -->
     <string name="gesture_anywhere_title">Gesture Anywhere</string>
@@ -475,15 +500,6 @@
     <string name="trigger_top_summary">Adjust the vertical postion of the trigger area</string>
     <string name="trigger_bottom_title">Trigger height</string>
     <string name="trigger_bottom_summary">Adjust the height of the trigger area</string>
-
-    <string name="picker_activities">Activities</string>
-    <string name="select_custom_app_title">Select custom app</string>
-    <string name="select_custom_activity_title">Select custom activity</string>
-    <string name="profile_applist_title">Applications</string>
-
-    <string name="default_string">Stock</string>
-    <string name="default_settings">Stock settings</string>
-    <string name="default_settings_summary">Stock AOSP navigation bar</string>
 
     <!-- Actions dialog and default task values set in ActionPreference xml-->
     <string name="choose_action_title">Choose action</string>
@@ -787,6 +803,9 @@
     <string name="clock_date_style_uppercase">Uppercase</string>
     <string name="clock_date_format_custom">Custom java format</string>
     <string name="menu_cancel">Cancel</string>
+    <string name="clock_date_right">Right of time</string>
+    <string name="clock_date_left">Left of time</string>
+    <string name="clock_date_position">Date position</string>
 
      <!-- Battery Styles -->
     <string name="battery_style_title">Battery icon style</string>
@@ -895,8 +914,8 @@
     <string name="led_color_red">Red</string>
     <string name="led_color_blue">Blue</string>
 
-    <string name="screenshot_edit_app">Screenshot edit app</string>
-    <string name="screenshot_edit_app_summary">Choose which app should be launched when tapping on the screenshot notification edit button</string>
+    <string name="screenshot_edit_app">Screenshot editor</string>
+    <string name="screenshot_edit_app_summary">Select which image editor to use to edit screenshots</string>
     <string name="screenshot_edit_app_no_editor">No image editor available</string>
 
     <!-- Wakelock blocker -->
@@ -1017,5 +1036,17 @@
     <!-- Quick QS scroller -->
     <string name="qqs_scroll_title">Quick scroll small tiles</string>
     <string name="qqs_scroll_summary">Allow scrolling through the small QS tiles</string>
+
+    <!-- Carrier Label -->
+    <string name="carrier_category">Carrier label</string>
+    <string name="carrier_options">Select display locations</string>
+    <string name="custom_carrier_label_title">Custom carrier label</string>
+    <string name="custom_carrier_label_explain">Please enter a new label. Leave blank to revert to stock label.</string>
+    <string name="custom_carrier_label_notset">Custom label currently not set</string>
+    <string name="show_carrier_title">Is displayed on</string>
+    <string name="show_carrier_disabled">Nowhere</string>
+    <string name="show_carrier_keyguard">Lockscreen only</string>
+    <string name="show_carrier_statusbar">Statusbar only</string>
+    <string name="show_carrier_enabled">Lockscreen &amp; statusbar</string>
 
 </resources>
