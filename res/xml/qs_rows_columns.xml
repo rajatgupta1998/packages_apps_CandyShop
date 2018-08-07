@@ -46,7 +46,7 @@
         settings:units="" />
 
     <org.candy.candyshop.preference.CustomSeekBarPreference
-        android:key="sysui_qqs_count_key"
+        android:key="sysui_qqs_count"
         android:title="@string/qs_small_tiles_title"
         android:max="8"
         settings:min="3"
