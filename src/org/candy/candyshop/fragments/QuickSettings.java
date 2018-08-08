@@ -36,6 +36,7 @@ import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
 
+import org.candy.candyshop.fragments.QsRowsColumns;
 import org.candy.candyshop.preference.CustomSeekBarPreference;
 import org.candy.candyshop.preference.SystemSettingSwitchPreference;
 import org.candy.candyshop.preference.SystemSettingSeekBarPreference;
@@ -65,6 +66,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String STATUS_BAR_CUSTOM_HEADER = "status_bar_custom_header";
     private static final String CUSTOM_HEADER_ENABLED = "status_bar_custom_header";
     private static final String FILE_HEADER_SELECT = "file_header_select";
+    private static final String QS_QUICKBAR_SCROLL_ENABLED = "qs_quickbar_scroll_enabled";
 
     private static final int REQUEST_PICK_IMAGE = 0;
 
@@ -80,6 +82,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private ListPreference mTileAnimationStyle;
     private ListPreference mTileAnimationDuration;
     private ListPreference mTileAnimationInterpolator;
+    private SystemSettingSwitchPreference mQqsScrollEnabled;
+    private CustomSeekBarPreference mSysuiQqsCount;
 
     @Override
     public int getMetricsCategory() {
@@ -164,6 +168,11 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 
         mFileHeader = findPreference(FILE_HEADER_SELECT);
         mFileHeader.setEnabled(providerName.equals(mFileHeaderProvider));
+
+        mQqsScrollEnabled = (SystemSettingSwitchPreference) findPreference(QS_QUICKBAR_SCROLL_ENABLED);
+        mQqsScrollEnabled.setOnPreferenceChangeListener(this);
+
+        int SysuiQqsCount = Settings.Secure.getInt(resolver, Settings.Secure.QQS_COUNT, 6);
     }
 
     private void updateHeaderProviderSummary(boolean headerEnabled) {
@@ -255,7 +264,27 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             Boolean headerEnabled = (Boolean) newValue;
             updateHeaderProviderSummary(headerEnabled);
             return true;
-       }
+        } else if (preference == mQqsScrollEnabled) {
+            Boolean quickQsScrollEnabled = (Boolean) newValue;
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.QS_QUICKBAR_SCROLL_ENABLED, quickQsScrollEnabled ? 1:0, UserHandle.USER_CURRENT);
+
+            // Also touch secure count to refresh the secure setting (a lil hacky but works...)
+            int SysuiQqsCount = Settings.Secure.getInt(getContentResolver(), Settings.Secure.QQS_COUNT, 6);
+            if (SysuiQqsCount != 0) {
+                int newCount = SysuiQqsCount;
+                if (SysuiQqsCount < 8 ) {
+                    newCount = SysuiQqsCount + 1;
+                } else if (SysuiQqsCount >= 8) {
+                    newCount = SysuiQqsCount - 1;
+                }
+                Settings.Secure.putInt(getContentResolver(),
+                        Settings.Secure.QQS_COUNT, newCount * 1);
+                Settings.Secure.putInt(getContentResolver(),
+                        Settings.Secure.QQS_COUNT, SysuiQqsCount * 1);
+            }
+            return true;
+        }
         return false;
     }
 
