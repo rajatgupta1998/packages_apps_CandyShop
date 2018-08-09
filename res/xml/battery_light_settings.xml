@@ -15,7 +15,9 @@
 -->
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+        android:key="battery_light_settings"
+        android:title="@string/batterylight_title">
 
     <org.candy.candyshop.preference.SystemSettingSwitchPreference
         android:key="battery_light_enabled"

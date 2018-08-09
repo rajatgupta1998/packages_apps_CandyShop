@@ -15,7 +15,9 @@
 -->
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+        android:key="qs_rows_columns"    
+        android:title="@string/qs_rows_columns_title" >
 
     <org.candy.candyshop.preference.CustomSeekBarPreference
         android:key="qs_rows_portrait"

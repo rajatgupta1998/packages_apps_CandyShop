@@ -17,8 +17,9 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:title="@string/lockscreen_category"
-    android:layout="@layout/tab" >
+        android:key="lockscreen"
+        android:title="@string/lockscreen_category"
+        android:layout="@layout/tab" >
 
     <PreferenceCategory
         android:key="media_options_category"

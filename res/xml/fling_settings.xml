@@ -17,7 +17,8 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:title="@string/fling_interface" >
+        android:key="fling_settings"
+        android:title="@string/fling_interface" >
 
     <PreferenceCategory
         android:key="eos_actions_swipe_category"

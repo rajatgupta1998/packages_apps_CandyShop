@@ -15,7 +15,9 @@
 -->
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+        android:key="ambient_ticker"
+        android:title="@string/force_ambient_for_media_pref_title" >
 
     <ListPreference
         android:key="force_ambient_for_media"

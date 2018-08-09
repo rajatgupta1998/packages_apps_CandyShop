@@ -17,7 +17,8 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-        android:title="@string/slim_recents_title">
+            android:key="slim_recents_panel_settings"
+            android:title="@string/slim_recents_title">
 
         <org.candy.candyshop.preference.CustomSeekBarPreference
             android:key="recents_max_apps"
