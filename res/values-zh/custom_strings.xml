@@ -16,6 +16,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Main abc pref screens -->
+    <string name="abc_sys">杂项</string>
     <!-- Color Picker -->
     <!-- Media art -->
     <!-- Sms security limit -->
